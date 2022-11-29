@@ -236,12 +236,15 @@ main {
   border: 1px solid;
   border-radius: 10px;
   width: 75%;
-  min-height: 70px;
+  min-height: 150px;
   padding: 15px;
   box-shadow: 0 0 7px rgba(0, 0, 0, 0.1);
 }
 .output-section #output-wrapper p {
   text-align: center;
+}
+.output-section #output-wrapper .result {
+  font-size: 27px;
 }
 @media only screen and (max-width: 680px) {
   .output-section {

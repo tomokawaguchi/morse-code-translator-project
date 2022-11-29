@@ -1,5 +1,5 @@
-import { morseCode } from "./data.js";
 import { createAndAttachElement, addDefaultText, getEnteredValue } from "./dom.js";
+import { convertToMorse } from "./helper.js";
 
 const inputField = document.querySelector("#input-text-area");
 const triggerBtn = document.querySelector("#trigger-btn");
@@ -19,10 +19,10 @@ triggerBtn.addEventListener("click", () => {
 	outputWrapper.innerHTML = "";
 
 	// Obtained the translation
-	result = enteredValue;
+	result = convertToMorse(enteredValue);
 
 	// Showcase the result
-	createAndAttachElement("p", "", result, outputWrapper);
+	createAndAttachElement("p", "result", result, outputWrapper);
 });
 
 // Handle the reset button click event listener
