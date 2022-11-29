@@ -1,0 +1,69 @@
+@use "../partials/mixins" as *;
+@import "../partials/palette";
+
+main {
+	@include flex(auto);
+}
+
+.input-section {
+	@include displayFlex(unset, center);
+	flex-direction: column;
+
+	#input-text-area {
+		font-size: 18px;
+		width: 75%;
+		height: 200px;
+		border-radius: 10px;
+		padding: 10px;
+		outline: none;
+		box-shadow: 0 0 7px rgb(0 0 0 / 10%);
+	}
+
+	@include mediaQuery("max", 680px) {
+		#input-text-area {
+			width: 90%;
+		}
+	}
+}
+
+.output-section {
+	@include displayFlex(unset, center);
+	flex-direction: column;
+	padding: 20px;
+
+	.para {
+		margin-bottom: 20px;
+	}
+
+	#output-wrapper {
+		@include displayFlex(center, center);
+		background-color: white;
+		border: 1px solid;
+		border-radius: 10px;
+		width: 75%;
+		min-height: 70px;
+		padding: 15px;
+		box-shadow: 0 0 7px rgb(0 0 0 / 10%);
+
+		p {
+			text-align: center;
+		}
+	}
+
+	@include mediaQuery("max", 680px) {
+		padding: 20px 0;
+
+		#output-wrapper {
+			width: 90%;
+		}
+	}
+	@include mediaQuery("max", 450px) {
+		.para {
+			text-align: center;
+		}
+	}
+}
+
+.reset-section {
+	@include displayFlex(center, unset);
+}

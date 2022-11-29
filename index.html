@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="./css/style.css" />
+		<!-- Google fonts -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet" />
+		<script type="module" src="./javascrip/script.js" diff></script>
+		<title>Morse Code Translator Project</title>
+	</head>
+	<body>
+		<div class="header-main-wrapper">
+			<header class="header">
+				<h1 class="header__heading">Morse Code Translator</h1>
+				<p class="header__para">You can convert English to the morse code, and vice versa!</p>
+				<p class="header__para">Simply start typing whatever you want to say in English.</p>
+			</header>
+			<main>
+				<section class="input-section">
+					<textarea id="input-text-area" placeholder="Start typing here!"></textarea>
+					<button id="trigger-btn" class="btn btn--primary">Let's Translate</button>
+				</section>
+				<section class="output-section">
+					<p class="para">What you have typed has been translated into ...</p>
+					<div id="output-wrapper"></div>
+				</section>
+				<section class="reset-section">
+					<button id="reset-btn" class="btn btn--secondary">Start Over Again</button>
+				</section>
+			</main>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,49 @@
+// Flex box
+@mixin displayFlex($justify-content, $align-items) {
+	display: flex;
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	justify-content: $justify-content;
+	align-items: $align-items;
+}
+
+@mixin flex($value) {
+	-webkit-box-flex: $value; /* OLD - iOS 6-, Safari 3.1-6 */
+	-moz-box-flex: $value; /* OLD - Firefox 19- */
+	-webkit-flex: $value; /* Chrome */
+	-ms-flex: $value;
+}
+
+// On Hover & Focus
+@mixin onHoverFocus {
+	&:hover,
+	&:focus {
+		@content;
+	}
+}
+
+// Media query
+@mixin mediaQuery($type, $size) {
+	@if $type == "max" {
+		@media only screen and (max-width: $size) {
+			@content;
+		}
+	} @else {
+		@media only screen and (min-width: $size) {
+			@content;
+		}
+	}
+}
+
+// Button default styling reset
+@mixin buttonReset {
+	border: none;
+	background-color: transparent;
+	padding: 0;
+}
+// Transition
+@mixin transitionEaseInOut($time) {
+	transition: all $time ease-in-out;
+}

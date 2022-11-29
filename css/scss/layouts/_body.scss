@@ -1,0 +1,46 @@
+@use "../partials/mixins" as *;
+@import "../partials/palette";
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	@include displayFlex(center, center);
+	font-family: "Noto Sans", sans-serif;
+	color: $black;
+	width: 100%;
+	height: 100vh;
+
+	.header-main-wrapper {
+		@include displayFlex(unset, unset);
+		flex-direction: column;
+		position: relative;
+		border: 4px solid $orange;
+		border-radius: 10px;
+		width: 800px;
+		min-height: 800px;
+		box-shadow: 0 0 12px rgba(0, 0, 0, 0.2);
+	}
+
+	@include mediaQuery("max", 860px) {
+		.header-main-wrapper {
+			width: 640px;
+		}
+	}
+
+	@include mediaQuery("max", 680px) {
+		width: 95%;
+		margin: 0 auto;
+
+		.header-main-wrapper {
+			width: 100%;
+		}
+	}
+	@include mediaQuery("max", 450px) {
+		.header-main-wrapper {
+			padding: 0 10px;
+		}
+	}
+}

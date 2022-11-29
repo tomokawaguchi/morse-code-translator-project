@@ -1,1 +1,1 @@
-# morse-code-translator-project
+# Morse Code Translator Project

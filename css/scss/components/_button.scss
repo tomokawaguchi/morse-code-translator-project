@@ -1,0 +1,41 @@
+@use "../partials/mixins" as *;
+@import "../partials/palette";
+
+.btn {
+	@include buttonReset;
+	@include transitionEaseInOut(0.2s);
+	font-size: 16px;
+	font-weight: 600;
+	border-radius: 30px;
+	padding: 20px 100px;
+	margin: 20px 0;
+	box-shadow: 0 0 7px rgba(0, 0, 0, 0.1);
+	cursor: pointer;
+
+	&--primary {
+		color: white;
+		background-color: $orange;
+		border: 2px solid $orange;
+
+		@include onHoverFocus {
+			color: $orange;
+			background-color: white;
+		}
+	}
+
+	&--secondary {
+		color: white;
+		background-color: $btn-black;
+		border: 2px solid $btn-black;
+
+		@include onHoverFocus {
+			color: $btn-black;
+			background-color: white;
+		}
+	}
+
+	@include mediaQuery("max", 450px) {
+		width: 95%;
+		padding: 20px 0;
+	}
+}
