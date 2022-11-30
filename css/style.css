@@ -1,3 +1,10 @@
+@font-face {
+  font-family: "fontello";
+  src: url("../fonts/fontello.eot?93633842");
+  src: url("../fonts/fontello.eot?93633842#iefix") format("embedded-opentype"), url("../fonts/fontello.woff?93633842") format("woff"), url("../fonts/fontello.ttf?93633842") format("truetype"), url("../fonts/fontello.svg?93633842#fontello") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
 .btn {
   border: none;
   background-color: transparent;
@@ -36,6 +43,93 @@
   }
 }
 
+.switch-selection {
+  display: flex;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  justify-content: unset;
+  align-items: center;
+  margin: 20px 0;
+}
+.switch-selection #swap-btn {
+  border: none;
+  background-color: transparent;
+  padding: 0;
+  transition: all 0.2s ease-in-out;
+  background-color: white;
+  border: 2px solid #f39848;
+  border-radius: 100px;
+  padding: 7px;
+  margin-right: 20px;
+  cursor: pointer;
+}
+.switch-selection #swap-btn .icon-exchange {
+  transition: all 0.2s ease-in-out;
+  display: block;
+  font-size: 22px;
+  color: #f39848;
+  pointer-events: none;
+}
+.switch-selection #swap-btn:hover, .switch-selection #swap-btn:focus {
+  background-color: #f39848;
+}
+.switch-selection #swap-btn:hover .icon-exchange, .switch-selection #swap-btn:focus .icon-exchange {
+  color: white;
+}
+.switch-selection .text-swap {
+  display: flex;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  justify-content: unset;
+  align-items: center;
+}
+.switch-selection .text-swap span {
+  transition: all 1s ease-in-out;
+  display: block;
+  text-align: center;
+  -webkit-box-flex: 0 0 70px;
+  /* OLD - iOS 6-, Safari 3.1-6 */
+  -moz-box-flex: 0 0 70px;
+  /* OLD - Firefox 19- */
+  -webkit-flex: 0 0 70px;
+  /* Chrome */
+  -ms-flex: 0 0 70px;
+}
+.switch-selection .text-swap .icon-right {
+  -webkit-box-flex: auto;
+  /* OLD - iOS 6-, Safari 3.1-6 */
+  -moz-box-flex: auto;
+  /* OLD - Firefox 19- */
+  -webkit-flex: auto;
+  /* Chrome */
+  -ms-flex: auto;
+  display: inline-block;
+  font-size: 42px;
+  padding: 0 30px;
+  color: #3b3b3b;
+  transform: rotate(-90deg);
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(180deg);
+  }
+}
+@keyframes spinReverse {
+  from {
+    transform: rotate(180deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
 * {
   margin: 0;
   padding: 0;
@@ -51,8 +145,7 @@ body {
   align-items: center;
   font-family: "Noto Sans", sans-serif;
   color: #100808;
-  width: 100%;
-  height: 100vh;
+  padding: 65px;
 }
 body .header-main-wrapper {
   display: flex;
@@ -71,6 +164,9 @@ body .header-main-wrapper {
   box-shadow: 0 0 12px rgba(0, 0, 0, 0.2);
 }
 @media only screen and (max-width: 860px) {
+  body {
+    padding: 65px 45px;
+  }
   body .header-main-wrapper {
     width: 640px;
   }
@@ -78,6 +174,7 @@ body .header-main-wrapper {
 @media only screen and (max-width: 680px) {
   body {
     width: 95%;
+    padding: 50px 10px;
     margin: 0 auto;
   }
   body .header-main-wrapper {
@@ -88,6 +185,12 @@ body .header-main-wrapper {
   body .header-main-wrapper {
     padding: 0 10px;
   }
+}
+
+.custom-icon {
+  font-family: "fontello";
+  font-style: normal;
+  font-weight: normal;
 }
 
 .header {
@@ -114,6 +217,7 @@ body .header-main-wrapper {
   position: absolute;
   font-size: 36px;
   text-transform: uppercase;
+  text-align: center;
   top: -50px;
   background-color: white;
   border-radius: 60px;
@@ -150,6 +254,11 @@ body .header-main-wrapper {
     padding: 10px 15px;
   }
 }
+@media only screen and (max-width: 290px) {
+  .header__heading {
+    top: -45px;
+  }
+}
 .header__para {
   margin: 5px 0;
 }
@@ -171,6 +280,12 @@ body .header-main-wrapper {
 }
 @media only screen and (max-width: 450px) {
   .header {
+    padding-top: 40px;
+  }
+}
+@media only screen and (max-width: 400px) {
+  .header {
+    padding: 10px;
     padding-top: 40px;
   }
 }
@@ -197,7 +312,8 @@ main {
 }
 .input-section #input-text-area {
   font-size: 18px;
-  width: 75%;
+  max-width: 75%;
+  width: 100%;
   height: 200px;
   border-radius: 10px;
   padding: 10px;
@@ -206,7 +322,7 @@ main {
 }
 @media only screen and (max-width: 680px) {
   .input-section #input-text-area {
-    width: 90%;
+    max-width: 90%;
   }
 }
 

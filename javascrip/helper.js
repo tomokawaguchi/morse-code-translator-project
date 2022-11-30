@@ -10,3 +10,22 @@ export const convertToMorse = (str) => {
 		})
 		.join(" ");
 };
+
+// Handle translation morse code english
+const entriesArr = Object.entries(morseCode);
+
+export const convertToEnglish = (str) => {
+	const charArr = str
+		.split(" ")
+		.map((el) => {
+			return entriesArr.filter((each) => {
+				if (each[1] === el) {
+					return each[0];
+				}
+			});
+		})
+		.map((each) => each[0][0].toLowerCase())
+		.join("");
+	console.log(charArr);
+	return charArr;
+};

@@ -1,17 +1,17 @@
 // Dom related functions
-export const createAndAttachElement = (el, className, text, parent) => {
+export const createElement = (el, className, text) => {
 	const element = document.createElement(el);
 	if (className) element.className = className;
 	const textNode = document.createTextNode(text);
 	element.appendChild(textNode);
-	parent.appendChild(element);
+	return element;
 };
 
 // Add default text to the output area
 export const addDefaultText = () => {
 	const defaultText = "No result yet  :(";
-	const outputWrapper = document.querySelector("#output-wrapper");
-	createAndAttachElement("p", "default", defaultText, outputWrapper);
+	const para = createElement("p", "default", defaultText);
+	return para;
 };
 
 // Obtain entered user value from the input

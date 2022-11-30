@@ -43,7 +43,15 @@
 	background-color: transparent;
 	padding: 0;
 }
+
 // Transition
 @mixin transitionEaseInOut($time) {
 	transition: all $time ease-in-out;
+}
+
+// Custom Icon
+@mixin customIcon {
+	font-family: "fontello";
+	font-style: normal;
+	font-weight: normal;
 }
