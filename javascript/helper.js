@@ -1,7 +1,8 @@
 import { morseCode } from "./data.js";
 
-const invalidChar = "\uFFFD";
-const emptySpace = "\u00A0";
+const entriesArr = Object.entries(morseCode);
+export const invalidChar = "\uFFFD";
+export const emptySpace = "\u00A0";
 
 // Handle translation english to morse code
 export const convertToMorse = (str) => {
@@ -14,12 +15,12 @@ export const convertToMorse = (str) => {
 			if (morseCode[el]) return morseCode[el];
 			return invalidChar;
 		});
+
 	return morseArrWithSpace.join(" ");
 };
 
 // Handle translation morse code to english
-const entriesArr = Object.entries(morseCode);
-const isInList = (value) => {
+export const isInList = (value) => {
 	const element = entriesArr.filter((entry) => {
 		if (entry[1] === value) {
 			return entry[0];
@@ -29,12 +30,13 @@ const isInList = (value) => {
 };
 
 export const convertToEnglish = (str) => {
-	const sortedArr = [];
 	const charArr = str.split(" ").map((each) => {
 		if (isInList(each)) return isInList(each).toLowerCase();
-		if (each === " ") return emptySpace;
+		if (each === "") {
+			return emptySpace;
+		}
 		return invalidChar;
 	});
-	console.log({ charArr });
+
 	return charArr.join(" ");
 };

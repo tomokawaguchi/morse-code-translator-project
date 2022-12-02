@@ -1,4 +1,4 @@
-import { createElement, addDefaultText, getEnteredValue } from "./dom.js";
+import { createAndAttachElement, outputDefaultText, getEnteredValue, updateInnerHTML } from "./dom.js";
 import { convertToMorse, convertToEnglish } from "./helper.js";
 
 const inputField = document.querySelector("#input-text-area");
@@ -12,7 +12,7 @@ let isTranslatedToMorse = true;
 let result = "";
 
 // Show case the default text on load
-outputWrapper.appendChild(addDefaultText());
+outputDefaultText();
 
 // Handle language swap click button
 swapBtn.addEventListener("click", () => {
@@ -21,12 +21,16 @@ swapBtn.addEventListener("click", () => {
 	const right = swapText.querySelector(".right-lang");
 	const swapIcon = swapBtn.querySelector(".icon-exchange");
 
-	left.innerHTML = "";
-	right.innerHTML = "";
-	outputWrapper.innerHTML = "";
+	// Clearing the previous value
+	updateInnerHTML(left, "");
+	updateInnerHTML(right, "");
+	updateInnerHTML(outputWrapper, "");
 	inputField.value = "";
-	outputWrapper.appendChild(addDefaultText());
 
+	// Show the default text
+	outputDefaultText();
+
+	// Handle text swap and animation changes
 	if (isTranslatedToMorse) {
 		isTranslatedToMorse = false;
 		left.innerHTML = textsArr[1];
@@ -45,9 +49,9 @@ triggerBtn.addEventListener("click", () => {
 	const enteredValue = getEnteredValue();
 
 	// Clear the default text
-	outputWrapper.innerHTML = "";
+	updateInnerHTML(outputWrapper, "");
 
-	// Obtained the translation
+	// Determine the translation method and obtain the result
 	if (isTranslatedToMorse) {
 		result = convertToMorse(enteredValue);
 	} else {
@@ -55,8 +59,7 @@ triggerBtn.addEventListener("click", () => {
 	}
 
 	// Showcase the result
-	const resultEl = createElement("p", "result", result);
-	outputWrapper.appendChild(resultEl);
+	createAndAttachElement("p", "result", result, outputWrapper);
 });
 
 // Handle the reset button click event listener
@@ -65,6 +68,6 @@ resetBtn.addEventListener("click", () => {
 	inputField.value = "";
 
 	// Clear the output filed and add default text
-	outputWrapper.innerHTML = "";
-	outputWrapper.appendChild(addDefaultText());
+	updateInnerHTML(outputWrapper, "");
+	outputDefaultText();
 });
