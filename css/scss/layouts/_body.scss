@@ -10,8 +10,7 @@ body {
 	@include displayFlex(center, center);
 	font-family: "Noto Sans", sans-serif;
 	color: $black;
-	width: 100%;
-	height: 100vh;
+	padding: 65px;
 
 	.header-main-wrapper {
 		@include displayFlex(unset, unset);
@@ -25,6 +24,8 @@ body {
 	}
 
 	@include mediaQuery("max", 860px) {
+		padding: 65px 45px;
+
 		.header-main-wrapper {
 			width: 640px;
 		}
@@ -32,6 +33,7 @@ body {
 
 	@include mediaQuery("max", 680px) {
 		width: 95%;
+		padding: 50px 10px;
 		margin: 0 auto;
 
 		.header-main-wrapper {
@@ -43,4 +45,11 @@ body {
 			padding: 0 10px;
 		}
 	}
+}
+
+// Global class
+.custom-icon {
+	font-family: "fontello";
+	font-style: normal;
+	font-weight: normal;
 }
