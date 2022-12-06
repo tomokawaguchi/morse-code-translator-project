@@ -1,7 +1,7 @@
 // Dom related functions
 export const createAndAttachElement = (el, className, text, parent) => {
 	const element = document.createElement(el);
-	if (className) element.className = className;
+	if (className) element.classList.add(className);
 	const textNode = document.createTextNode(text);
 	element.appendChild(textNode);
 	parent.appendChild(element);
