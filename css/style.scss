@@ -1,0 +1,11 @@
+//******************** Base ********************//
+@use "./scss/base/fonts";
+
+//******************** Components ********************//
+@use "./scss/components/button";
+@use "./scss/components/switch";
+
+//******************** Layouts ********************//
+@use "./scss/layouts/body";
+@use "./scss/layouts/header";
+@use "./scss/layouts/main";
