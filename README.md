@@ -3,7 +3,7 @@
 :link:  https://gmorse-code-translator.tomok.dev
 
 
-![project snapshot](https://github.com/tomokawaguchi/google-api-books-app-/blob/main/src/assets/project-snapshot.png?raw=true)
+![project snapshot](https://github.com/tomokawaguchi/morse-code-translator-project/blob/main/project-snapshot.png)
 
 
 
