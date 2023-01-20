@@ -2,8 +2,7 @@
 
 :link:  https://morse-code-translator.tomok.dev
 
-
-![project snapshot](https://github.com/tomokawaguchi/morse-code-translator-project/blob/main/project-snapshot.png)
+<img src="https://github.com/tomokawaguchi/morse-code-translator-project/blob/main/project-snapshot.png" width="auto" height="400" />
 
 
 
